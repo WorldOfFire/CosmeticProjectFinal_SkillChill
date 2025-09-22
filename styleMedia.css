@@ -1,0 +1,496 @@
+/* Reset i font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(198, 174, 126, 0.2);
+  width: 100%;
+  flex: 1;
+}
+
+th.button-download_bth {
+  text-align: left;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-bottom: 2px solid #c6ae7e;
+  position: relative;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+  padding-left: 40px;
+}
+
+.logo-container img {
+  width: 150px;
+  height: auto;
+}
+
+.header-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.header-text h1 {
+  font-size: 2.2rem;
+  color: #000000;
+}
+
+.header-text h2 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #000000;
+  margin-top: 5px;
+}
+
+/* Stopka */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-align: right;
+  padding: 15px 40px;
+  font-size: 0.9rem;
+  border-top: 2px solid #000000;
+  flex-shrink: 0;
+}
+
+/* Tła trójkątne */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #f6b5b1;
+  clip-path: polygon(0 0, 60% 50%, 0 100%);
+  z-index: -1;
+}
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50%;
+  background-color: #bda678;
+  clip-path: polygon(60% 0%, 0% 100%, 100% 100%);
+  z-index: -1;
+}
+.triangle-right {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 40vw;
+  height: 50%;
+  background-color: #bff0d5;
+  clip-path: polygon(0 33%, 100% 100%, 100% 0);
+  z-index: -1;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-bottom: 2px solid #c6ae7e;
+  position: relative;
+}
+.logo-container img {
+  width: 150px;
+  height: auto;
+}
+.header-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+.header-text h1 {
+  font-size: 2.2rem;
+}
+.header-text h2 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+/* Górny panel przycisków */
+.return-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-right: 40px;
+}
+.return-container > div {
+  display: flex;
+  gap: 10px;
+}
+.return-container button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+.return-container button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+/* Action container */
+.action-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+}
+
+.action-container button {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #000000;
+  border: none;
+  width: 35px; /* dopasowane do wysokości pól filtrujących */
+  height: 35px; /* dopasowane do wysokości pól filtrujących */
+  font-size: 1rem; /* zmniejszenie tekstu, by nie wychodził poza przycisk */
+  border-radius: 10px; /* lekko mniejsze zaokrąglenie */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4px; /* zmniejszone, aby ikona dobrze pasowała */
+}
+
+.action-container button i {
+  font-size: 1rem; /* dopasowanie ikony do przycisku */
+}
+
+/* Main container */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 2000px;
+  background-color: #fff;
+  padding: 40px;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  flex: 1; /* dodane */
+  width: 100%; /* pełna szerokość */
+  min-height: 100%;
+}
+
+/* Filtry */
+.filter-section {
+  width: 100%;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+.filter-form input,
+.filter-form select {
+  padding: 6px 10px;
+  border: 1px solid #bda678;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+.filter-btn {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  height: 10px;
+  width: 10px;
+}
+.filter-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: 1px solid #000;
+  transform: scale(1.05);
+}
+
+/* Formularze */
+form {
+  padding-top: 20px;
+  background-color: white;
+  overflow-x: hidden; /* nie pozwala na poziome przesuwanie */
+  width: 100%;
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+form {
+  padding: 5px; /* usuń wewnętrzny odstęp, żeby tabela wypełniała form */
+  background-color: white;
+  overflow-x: hidden; /* brak poziomego scrolla */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box; /* uwzględnia border w szerokości */
+}
+/* Tabela */
+/* Desktop & tablet */
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+.table-container table {
+  border: 1px solid #bda678;
+  border-collapse: separate;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+table th,
+table td {
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid #bda678;
+  text-align: center;
+  word-wrap: break-word; /* zawijanie długich nazw */
+}
+
+.table-header th {
+  background-color: #f6b5b1;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.table-actions th {
+  background-color: #bda678;
+}
+.table-columns th {
+  background-color: #bbb;
+}
+
+.tr-checbox th {
+  height: 60px;
+}
+
+/* Checkboxy i przyciski */
+table input[type="checkbox"],
+table button {
+  display: block;
+  margin: 0 auto;
+}
+table select {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #bda678;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Hover row */
+table tr:hover td {
+  background-color: #f2f2f2;
+}
+
+table i {
+  color: black;
+  text-decoration: none;
+}
+
+/* Responsywność */
+@media (max-width: 1024px) {
+  table th,
+  table td {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 5px 5px;
+  }
+  .return-container {
+    padding-right: 0px;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+  }
+  .logo-container {
+    padding-left: 0;
+  }
+  .logo-container img {
+    width: 120px;
+  }
+  .header-text {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+  .header-text h2 {
+    font-size: 1.2rem;
+  }
+  form {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+    width: 100%;
+  }
+
+  table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    white-space: normal;
+    text-align: center;
+  }
+  table td,
+  table th {
+    white-space: normal;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    text-align: left;
+    text-align: center;
+  }
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .filter-form {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .filter-form label {
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .filter-form input,
+  .filter-form select {
+    width: 100%;
+  }
+  .filter-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+  .action-container {
+    justify-content: center;
+    align-items: center;
+  }
+  .table-actions {
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .table-actions th {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-container button {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  table td,
+  table th {
+    font-size: 0.8rem;
+    padding: 6px 3px;
+  }
+  table select {
+    min-width: 100px;
+  }
+}

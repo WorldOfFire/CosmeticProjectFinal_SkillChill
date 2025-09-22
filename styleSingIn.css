@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+}
+
+/* Tła trójkątne */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #f6b5b1;
+  clip-path: polygon(0 0, 60% 50%, 0 100%);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50%;
+  background-color: #bda678;
+  clip-path: polygon(60% 0%, 0% 100%, 100% 100%);
+  z-index: -1;
+}
+
+.triangle-right {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 40vw;
+  height: 50%;
+  background-color: #bff0d5;
+  clip-path: polygon(0 33%, 100% 100%, 100% 0);
+  z-index: -1;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-bottom: 2px solid #c6ae7e;
+  position: relative;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+  padding-left: 40px;
+}
+
+.logo-container img {
+  width: 150px;
+  height: auto;
+}
+
+.header-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.header-text h1 {
+  font-family: "Apple Chancery", cursive;
+  font-size: 2.2rem;
+  color: #000000;
+}
+
+.header-text h2 {
+  font-family: "Apple Chancery", cursive;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #000000;
+  margin-top: 5px;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: rgba(198, 174, 126, 0.5);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Powrót */
+.return-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-right: 40px;
+}
+
+.return-container > div {
+  display: flex;
+  gap: 10px;
+}
+
+.return-container button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+
+.return-container button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+/* Formularz logowania / rejestracji */
+.action-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.action-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pola formularza */
+.action-container label {
+  font-family: "Apple Chancery", cursive;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  color: #000;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-container input,
+.action-container select {
+  font-family: "Apple Chancery", cursive;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  margin-top: 5px;
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Kontener przycisków w jednej linii */
+.button-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.button-row button {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  max-width: 250px;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.button-row button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  transform: scale(1.05);
+  border: 1px solid #000;
+}
+
+/* Error / success messages */
+.error_container {
+  height: 50px;
+  font-family: "Apple Chancery", cursive;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-align: right;
+  padding: 15px 40px;
+  font-size: 0.9rem;
+  border-top: 2px solid #000000;
+  flex-shrink: 0; /* stopka nie kurczy się */
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  .logo-container {
+    padding-left: 0;
+  }
+
+  .logo-container img {
+    width: 120px;
+  }
+
+  .header-text {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .action-container button {
+    font-size: 1.3rem;
+    padding: 15px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+  }
+
+  .logo-container img {
+    width: 100px;
+  }
+
+  .header-text {
+    margin-top: 10px;
+  }
+
+  .header-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .header-text h2 {
+    font-size: 1rem;
+  }
+
+  .main-container {
+    padding: 0 10px;
+  }
+
+  .action-container input,
+  .action-container select {
+    width: 100%;
+  }
+
+  .button-row {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .button-row button {
+    width: 100%;
+    justify-content: center;
+  }
+}

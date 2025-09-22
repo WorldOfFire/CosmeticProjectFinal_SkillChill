@@ -1,0 +1,431 @@
+/* ===============================
+   RESET I PODSTAWOWY LAYOUT
+   =============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Główny kontener */
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgba(198, 174, 126, 0.2);
+  width: 100%;
+  flex: 1;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-bottom: 2px solid #c6ae7e;
+  position: relative;
+}
+
+.logo-container {
+  flex: 0 0 auto;
+  padding-left: 40px;
+}
+
+.logo-container img {
+  width: 150px;
+  height: auto;
+}
+
+.header-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.header-text h1 {
+  font-family: "Apple Chancery", cursive;
+  font-size: 2.2rem;
+  color: #000000;
+}
+
+.header-text h2 {
+  font-family: "Apple Chancery", cursive;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #000000;
+  margin-top: 5px;
+}
+#quarter-container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#quarter-container div div {
+  padding-bottom: 30px;
+  text-align: center;
+}
+/* Stopka */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-align: right;
+  padding: 15px 40px;
+  font-size: 0.9rem;
+  border-top: 2px solid #000000;
+  flex-shrink: 0;
+}
+
+/* Tła trójkątne */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #f6b5b1;
+  clip-path: polygon(0 0, 60% 50%, 0 100%);
+  z-index: -1;
+}
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50%;
+  background-color: #bda678;
+  clip-path: polygon(60% 0%, 0% 100%, 100% 100%);
+  z-index: -1;
+}
+.triangle-right {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 40vw;
+  height: 50%;
+  background-color: #bff0d5;
+  clip-path: polygon(0 33%, 100% 100%, 100% 0);
+  z-index: -1;
+}
+.return-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-right: 40px;
+}
+.return-container > div {
+  display: flex;
+  gap: 10px;
+}
+.return-container button {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+  border: 1px solid transparent;
+}
+.return-container button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000;
+  border: 1px solid black;
+  transform: scale(1.05);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 2000px;
+  background-color: #fff;
+  padding: 40px;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  flex: 1; /* dodane */
+  width: 100%; /* pełna szerokość */
+  min-height: 100%;
+}
+
+/* Action container (przygotowane dla przycisków formularza) */
+.action-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+}
+input {
+  width: 100%;
+  max-width: 200px;
+  padding: 6px 10px;
+  border: 1px solid #f6b5b1;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* ===============================
+   Sekcje formularza kwartalnego
+   =============================== */
+#quarter-container > div {
+  background-color: #fff;
+  border: 1px solid #bda678;
+  border-collapse: separate;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* Nagłówki sekcji */
+#quarter-container h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* Kwartał i rok */
+#quarter-container label {
+  margin-right: 20px;
+  margin-left: 20px;
+  font-weight: bold;
+  color: #000;
+}
+#label-new_clients {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#quarter-container select,
+#quarter-container input[type="number"] {
+  padding: 6px 10px;
+  border: 1px solid #f6b5b1;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 120px;
+}
+
+/* Kanały sprzedaży */
+#quarter-container > div button {
+  padding: 6px 12px;
+  border: 1px solid #f6b5b1;
+  border-radius: 6px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 5px 0; /* pionowy odstęp między przyciskami */
+  width: 100%; /* na telefonie przyciski zajmują pełną szerokość */
+  max-width: 180px; /* ograniczenie szerokości */
+}
+#quarter-container div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* Inputy sprzedaży kanałowej */
+#quarter-container input[type="text"],
+#quarter-container input[type="number"],
+#quarter-container select {
+  width: 180px; /* ustaw stałą szerokość */
+  max-width: 100%; /* ograniczenie przy mniejszych ekranach */
+  padding: 6px 10px;
+  border: 1px solid #f6b5b1;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+#form-container div {
+  flex-direction: column;
+}
+.form-controls {
+  flex-direction: column;
+}
+canvas {
+  width: 500px;
+  height: 200px;
+}
+.chart-container h4 {
+  padding-right: 20px;
+}
+/* Tabela produktów i klientów */
+#quarter-container table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#quarter-container table th,
+#quarter-container table td {
+  border: 1px solid #f6b5b1;
+  padding: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  word-wrap: break-word;
+}
+
+#quarter-container table th {
+  background-color: #f6b5b1;
+  color: #000;
+  font-weight: bold;
+}
+
+#quarter-container table tr:nth-child(even) {
+  background-color: #fff6f4;
+}
+
+/* Tabela stanu magazynu */
+#quarter-container table input[type="number"] {
+  width: 80px;
+  padding: 4px 6px;
+  border: 1px solid #f6b5b1;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Przycisk dodawania klienta/produktu */
+#quarter-container button {
+  background-color: #f6b5b1;
+  color: #000;
+  border: 1px solid #c6ae7e;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Komunikaty walidacji */
+#quarter-container span {
+  font-weight: bold;
+}
+
+#quarter-container span.green {
+  color: green;
+}
+
+#quarter-container span.red {
+  color: red;
+}
+
+/* ===============================
+   Responsywność
+   =============================== */
+@media (max-width: 1024px) {
+  table th,
+  table td {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 5px 5px;
+  }
+  canvas {
+    width: 300px;
+    height: 100px;
+  }
+  .chart-container h4 {
+    padding-right: 0px;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+  }
+  .logo-container {
+    padding-left: 0;
+  }
+  .logo-container img {
+    width: 120px;
+  }
+  .header-text {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+  }
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+  .header-text h2 {
+    font-size: 1.2rem;
+  }
+  #quarter-container > div {
+    padding: 15px;
+  }
+  #quarter-container input[type="text"],
+  #quarter-container input[type="number"],
+  #quarter-container select {
+    width: 100%;
+  }
+  #quarter-container table th,
+  #quarter-container table td {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+  #quarter-container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* wycentrowanie przycisków */
+    gap: 10px; /* odstęp między przyciskami */
+  }
+  .main-container {
+    padding: 20px;
+  }
+  #quarter-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .action-container button {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+}

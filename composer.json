@@ -1,0 +1,21 @@
+{
+  "require": {
+    "composer/pcre": "^3.3",
+    "ezyang/htmlpurifier": "^4.18",
+    "maennchen/zipstream-php": "^3.2",
+    "markbaker/complex": "^3.0",
+    "markbaker/matrix": "^3.0",
+    "mpdf/mpdf": "^8.2",
+    "mpdf/psr-http-message-shim": "^2.0",
+    "mpdf/psr-log-aware-trait": "^3.0",
+    "myclabs/deep-copy": "^1.13",
+    "paragonie/random_compat": "9.99.100",
+    "phpoffice/phpspreadsheet": "^1.30",
+    "psr/http-client": "^1.0",
+    "psr/http-factory": "^1.1",
+    "psr/http-message": "^2.0",
+    "psr/log": "^3.0",
+    "psr/simple-cache": "^3.0",
+    "setasign/fpdi": "^2.6"
+  }
+}

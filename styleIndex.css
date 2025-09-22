@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll; /* scroll działa */
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0px; /* Chrome, Safari, Edge */
+  background: transparent; /* opcjonalnie */
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #f6b5b1;
+  clip-path: polygon(0 0, 60% 50%, 0 100%);
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50%;
+  background-color: #bda678;
+  clip-path: polygon(60% 0%, 0% 100%, 100% 100%);
+  z-index: -1;
+}
+
+.triangle-right {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 40vw;
+  height: 50%;
+  background-color: #bff0d5;
+  clip-path: polygon(0 33%, 100% 100%, 100% 0);
+  z-index: -1;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px 40px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-bottom: 2px solid #c6ae7e;
+  position: relative; /* potrzebne dla absolutnego pozycjonowania napisu */
+}
+
+.logo-container {
+  flex: 0 0 auto;
+  padding-left: 40px; /* odsunięcie logo od lewej */
+}
+
+.header-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* idealne wyśrodkowanie */
+  text-align: center;
+}
+
+.logo-container img {
+  width: 150px;
+  height: auto;
+}
+
+.header-text h1 {
+  font-family: "Apple Chancery", cursive;
+  font-size: 2.2rem;
+  color: #000000;
+}
+
+.header-text h2 {
+  font-family: "Apple Chancery", cursive;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #000000;
+  margin-top: 5px;
+}
+
+/* Main content */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: rgba(198, 174, 126, 0.5);
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.action-container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.action-container button {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ffffff;
+  border: none;
+  padding: 25px 50px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.action-container button i {
+  font-size: 1.5rem;
+}
+
+.action-container button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #000000;
+  transform: scale(1.1);
+  border: 2px solid #000000;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  text-align: right;
+  padding: 15px 40px;
+  font-size: 0.9rem;
+  border-top: 2px solid #000000;
+}
+
+/* Responsywność */
+
+/* Tablety */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
+  .logo-container {
+    padding-left: 0; /* na tabletach logo na środku */
+  }
+
+  .logo-container img {
+    width: 120px;
+  }
+
+  .header-text {
+    position: static; /* usuwamy absolute */
+    transform: none;
+    margin-top: 10px;
+  }
+
+  .header-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .header-text h2 {
+    font-size: 1.2rem;
+  }
+
+  .action-container button {
+    font-size: 1.3rem;
+    padding: 20px 40px;
+  }
+}
+
+/* Telefony */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+  }
+
+  .logo-container {
+    padding-left: 0; /* na telefonach logo też centralnie */
+  }
+
+  .logo-container img {
+    width: 100px;
+  }
+
+  .header-text {
+    margin-top: 10px; /* odstęp między logo a napisem */
+  }
+
+  .header-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .header-text h2 {
+    font-size: 1rem;
+  }
+
+  .action-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .action-container button {
+    width: 100%;
+    justify-content: center;
+    font-size: 1.1rem;
+    padding: 15px 25px;
+  }
+}

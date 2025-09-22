@@ -1,0 +1,215 @@
+/* Ogólny styl formularza */
+#account-form {
+  max-width: 550px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Każdy wiersz formularza jako flex */
+#account-form > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+/* Przyciski formularza na dole */
+#form-buttons {
+  display: none;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Etykiety pól */
+#account-form label {
+  min-width: 150px;
+  font-weight: 600;
+  color: #333;
+  flex-shrink: 0;
+}
+
+/* Wyświetlane wartości pól */
+#account-form span {
+  padding: 6px 8px;
+  background-color: #e9ecef;
+  border-radius: 6px;
+  font-size: 14px;
+  flex-grow: 1;
+  min-width: 120px;
+  max-width: 240px;
+  text-align: center;
+  display: inline-block;
+}
+
+/* Ukryte pola edycyjne inline (wszystkie pola, w tym hasło) */
+.edit-field {
+  display: none;
+  align-items: center;
+  gap: 6px;
+  flex-grow: 1;
+  flex-wrap: wrap;
+}
+
+/* Inputy i selecty w trybie edycji (wszystkie pola) */
+.edit-field input,
+.edit-field select {
+  padding: 6px 10px;
+  margin: 0;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  flex-grow: 1;
+  min-width: 120px;
+  max-width: 240px;
+  text-align: center;
+}
+
+/* Przycisk edycji / anulowania */
+#account-form button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #495057;
+  font-size: 16px;
+  padding: 4px 6px;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+#account-form button:hover {
+  color: #f6b5b1;
+}
+
+.cancel-btn {
+  color: #dc3545;
+}
+#cancel-btn-id {
+  display: none;
+}
+/* Przyciski formularza */
+#form-buttons button {
+  background-color: #f6b5b1;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s ease;
+}
+
+#form-buttons button.reset-btn {
+  background-color: #6c757d;
+}
+
+#form-buttons button:hover {
+  opacity: 0.9;
+}
+
+/* Blok hasła w jednej linii, spójny z innymi polami */
+/* Blok hasła spójny z innymi polami */
+#password-edit {
+  display: none;
+  flex-direction: column; /* inputy w kolumnie */
+  flex-grow: 1;
+  gap: 6px;
+  max-width: 240px; /* taka sama szerokość jak inne pola */
+}
+
+/* Inputy w bloku hasła */
+#password-edit input {
+  padding: 6px 10px;
+  margin: 0;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+  font-size: 14px;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+}
+
+/* Przycisk anulowania w bloku hasła */
+#password-edit .cancel-btn {
+  color: #dc3545;
+}
+
+/* Przyciski reset/submit w bloku hasła */
+#password-edit button[type="submit"],
+#password-edit button[type="reset"] {
+  background-color: #f6b5b1;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#password-edit button[type="reset"] {
+  background-color: #6c757d;
+}
+
+#password-edit button:hover {
+  opacity: 0.9;
+}
+
+/* Ukrywanie przycisków edycji podczas edycji hasła */
+#account-form.editing-password .edit-btn {
+  display: none !important;
+}
+
+/* Ukrywanie przycisku hasła, gdy edytujemy inne pola */
+#account-form.editing-field #edit-password-btn {
+  display: none !important;
+}
+
+/* Responsywność */
+@media (max-width: 500px) {
+  #account-form {
+    padding: 10px;
+  }
+
+  #account-form > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #account-form label,
+  #account-form span,
+  .edit-field input,
+  .edit-field select,
+  .edit-field button,
+  #account-form button {
+    width: 100%;
+    margin-bottom: 5px;
+    max-width: none;
+    text-align: left;
+  }
+
+  #form-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #password-edit {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #password-edit input,
+  #password-edit button {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+}

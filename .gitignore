@@ -1,0 +1,7 @@
+# Pliki konfiguracyjne z hasłami
+config.php
+
+# Pliki tymczasowe, cache, logi
+*.log
+*.tmp
+vendor/
