@@ -31,5 +31,5 @@ Podsumowanie:
 
 
 
-
-                                                                                                                                                projekt był realizowany z użyciem xampp, composter (użyte moduły w composter.JSON) i phpMyAdmin
+Realizacja i wymagania:
+    projekt był realizowany z użyciem xampp, composter (użyte moduły w composter.JSON) i phpMyAdmin
